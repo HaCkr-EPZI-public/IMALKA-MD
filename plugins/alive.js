@@ -12,15 +12,28 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-
-const voice = {
-    alive: 'my_data/autoreply_hi.mp3'
-}
+const aliveMessage = `
+  ~*WHATSAPP BOT ALIVE NOW....*~
 
 
-await conn.sendMessage(from, { audio: { url: voice.alive }, mimetype: 'audio/mp4', ptt: true }, { quoted: mek })
+*Hey there!* 
 
-return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
+ > 🟢 *HANSAMAL WhatsApp Bot* is up and running!
+           Runtime : ${runtime(process.uptime())}
+ > 🛠️ *Created by:* IMALKA HANSAMAL 
+ 
+*Here's what I can do:* 
+💿 *Download Songs & Videos* 
+📰 *Fetch Latest News* 
+🎭 *Entertain with Fun Commands* 
+🔧 *Manage Groups* 
+
+> *Stay connected and enjoy the services!* 
+
+
+*© HANSAMAL- MD* 
+*💻 GitHub:* github.com/cobrs11/HANSAMAL-MD `
+await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
 
 }catch(e){
 console.log(e)
