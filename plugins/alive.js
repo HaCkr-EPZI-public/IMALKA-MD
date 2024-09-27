@@ -12,7 +12,7 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-const aliveMessage = `
+let aliveMessage = `
   ~*WHATSAPP BOT ALIVE NOW....*~
 
 
@@ -33,7 +33,7 @@ const aliveMessage = `
 
 *© HANSAMAL- MD* 
 *💻 GitHub:* github.com/cobrs11/HANSAMAL-MD `
-await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
+return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
 
 }catch(e){
 console.log(e)
