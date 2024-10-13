@@ -19,7 +19,7 @@ const axios = require('axios')
 const { File } = require('megajs')
 
 
-const ownerNumber = ['94711262551']
+const ownerNumber = ['94778883057']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
